@@ -34,6 +34,16 @@ CI/CD 应该是必备工具。
 
 另一个重要的点是，很多场景通过业务设计，可以避免一些复杂的交互逻辑。使用复杂的交互会增加用户的学习成本，也会增加实现的难度。
 
+### 事件
+
+**何时触发 change 事件**
+
+设置 modelValue 后，再 emit change 事件。
+
+**事件命名**
+
+参考 HTML 标准中的命令习惯，onclick、oninput、onchange、onresize 等，事件应该是 onXxxYyy 风格，xxx 是动词。
+
 ### 基于 Hook 的弹窗函数
 
 弹窗是经常使用的组件。其实 drawer、dialog、message box 之类都可以是基于相同的底层实现。vue 推荐使用基于模板的弹窗实现，比如 element-ui 中的弹窗实现。但很多场景需要动态生成窗口内容或弹出不同的窗口，如果可以通过 openDialog() 这样的函数就可以打开一个窗口会更实用。比如 [NgModalService](https://ng.ant.design/components/modal/zh#components-modal-demo-service)
